@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,9 @@
   <meta name="keywords" content=" remera, pin, collar, gorro, calzado, mochila, peluche, muñeco, casco, campera, estatua ">
   <title>D-Shop Inicio</title>
   <link rel="stylesheet" href="style.css">
-  <script src="controlador.js"> </script>
+  <script src="script.js"> </script>
 </head>
+
 <body>
   <header>
     <h1>
@@ -19,100 +21,27 @@
       </a>
     </h1>
   </header>
-    <div id="carrito">
-      <h2>Carrito</h2>
-      <div id="product">
-        <span>Tus productos:</span>
-      </div>
-      <p>Total: <span id="total">$0</span></p>
-      <label for="cuotas">Cuotas:</label>
-      <select id="cuotas">
-        <option value="1">1 cuota</option>
-        <option value="3">3 cuotas</option>
-        <option value="6">6 cuotas</option>
-        <option value="12">12 cuotas</option>
-        <option value="18">18 cuotas</option>
-      </select>
-      <button id="btnPagar">Pagar</button>
-      </div>
-      </div>
+  <div id="carrito">
+    <h2>Carrito</h2>
+    <div id="product">
+      <span>Tus productos:</span>
+    </div>
+    <p>Total: <span id="total">$0</span></p>
+    <p id="interes"></p>
+    <label for="cuotas">Cuotas:</label>
+    <select id="cuotas">
+      <option value="1">1 cuota</option>
+      <option value="3">3 cuotas</option>
+      <option value="6">6 cuotas</option>
+      <option value="12">12 cuotas</option>
+      <option value="18">18 cuotas</option>
+    </select>
+    <button id="btnPagar">Pagar</button>
+  </div>
   <section class="destacado">
-    <h2 class="titulo">¡Destacado del día!</h2> 
-    <div class="mostrador">
-          <div class="div-mercancia"> 
-            <a><img class="img-destacado" src="img/atadura_tshirt.jpg" alt="remera Strand"></a>
-            <p class="producto">Remera Strand</p>
-            <p class="precio">$24.99</p>
-            <button class="btn-add-cart" type="submit" onclick="agregarAlCarrito('Remera Strand', 24.99)"> + Agregar al carrito </button>
-          </div>
-          <div class="div-mercancia"> 
-              <a><img class="img-destacado"  src="img/vagabundo.jpg" alt="muñeco vagabundo"></a>
-                  <p class="producto">Muñeco Vagabundo</p>
-                      <p class="precio">$15.99</p>
-                          <button class="btn-add-cart" type="submit" onclick="agregarAlCarrito('Muñeco Vagabundo', 15.99)"> + Agregar al carrito </button>
-          </div>
-          <div class="div-mercancia"> 
-              <a><img class="img-destacado"  src="img/pelucheexo.jpg" alt="peluche exo"></a>
-                  <p class="producto">Peluche Perro Exo</p>
-                      <p class="precio">$21.99</p>
-                          <button class="btn-add-cart" type="submit" onclick="agregarAlCarrito('Peluche Perro Exo', 21.99)"> + Agregar al carrito </button>
-          </div>
-          <div class="div-mercancia"> 
-              <a><img class="img-destacado"  src="img/muñecoCayde.jpg" alt="muñeco de cayde"></a>
-                  <p class="producto">Muñeco De Cayde</p>
-                      <p class="precio">$18.99</p>
-                          <button class="btn-add-cart" type="submit" onclick="agregarAlCarrito('Muñeco De Cayde', 18.99)"> + Agregar al carrito </button>
-          </div>
-          <div class="div-mercancia"> 
-              <a><img class="img-destacado" src="img/peluchedesirviente.jpg"alt="peluche de sirviente"></a>
-                  <p class="producto">Peluche De Sirviente</p>
-                      <p class="precio">$19.99</p>
-                          <button class="btn-add-cart" type="submit" onclick="agregarAlCarrito('Peluche De Sirviente', 19.99)"> + Agregar al carrito </button>
-          </div>
-          <div class="div-mercancia"> 
-              <a><img class="img-destacado" src="img/shaxx.jpg"alt="muñeco de shaxx"></a>
-                  <p class="precio">Muñeco De Shaxx </p>
-                      <p class="precio">$19.99</p>
-                          <button class="btn-add-cart" type="submit" onclick="agregarAlCarrito('Muñeco De Shaxx', 19.99)"> + Agregar al carrito </button>
-          </div>
-          <div class="div-mercancia"> 
-              <a> <img class="img-destacado" src="img/cascohalcon.jpg"alt="casco de halcon"> </a>
-                  <p class="producto">Casco De Halcon</p>
-                      <p class="precio"> $55</p>
-                          <button class="btn-add-cart" type="submit" onclick="agregarAlCarrito('Casco De Halcon', 55)"> + Agregar al carrito </button>
-          </div>
-          <div class="div-mercancia"> 
-              <a><img class="img-destacado" src="img/collarcazador.jpg"alt="collar de cazador"></a>
-                  <p class="producto">Collar De Cazador</p>
-                      <p class="precio">$9.99</p>
-                          <button class="btn-add-cart" type="submit" onclick="agregarAlCarrito('Collar De cazador', 9.99)"> + Agregar al carrito </button>
-          </div>
-          <div class="div-mercancia"> 
-              <a><img class="img-destacado" src="img/collargjallarhorn.jpg"alt="collar de gjarllarhorn"></a>
-                  <p class="producto">Collar Gjarllarhorn</p>
-                      <p class="precio">$35</p>
-                          <button class="btn-add-cart" type="submit" onclick="agregarAlCarrito('Collar Gjarllarhorn', 35)" > + Agregar al carrito </button>
-          </div>
-          <div class="div-mercancia"> 
-              <a><img class="img-destacado" src="img/remeralightfall.jpg" alt="remera de lightfall"></a>
-                  <p class="producto">Remera Eclipse</p>
-                      <p class="precio">$30</p>
-                          <button class="btn-add-cart" type="submit" onclick="agregarAlCarrito('Remera Eclipse', 30)"> + Agregar al carrito </button>
-          </div>
-          <div class="div-mercancia"> 
-              <a><img class="img-destacado" src="img/camperacazador.jpg" alt="campera de cazador"></a>
-                  <p class="producto">Campera Cazador</p>
-                      <p class="precio">$55</p>
-                          <button class="btn-add-cart" type="submit" onclick="agregarAlCarrito('Campera Cazador', 55)"> + Agregar al carrito </button>
-          </div>
-          <div class="div-mercancia"> 
-              <a><img class="img-destacado" src="img/estatua.jpg" alt="estatua de Hechicero"></a>
-                  <p class="producto">Estatua Hechicero</p>
-                      <p class="precio">$49.99</p>
-                          <button class="btn-add-cart" type="submit" onclick="agregarAlCarrito('Estatua Hechicero', 49.99)"> + Agregar al carrito </button>
-          </div>
-      </div>
-      </section> 
+    <h2 class="titulo">¡Destacado del día!</h2>
+    <div class="mostrador" id="productosContainer"></div>
+  </section>
 </body>
 
 </html>
