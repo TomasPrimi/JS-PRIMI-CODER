@@ -131,7 +131,39 @@ function mostrarProductos() {
     i++;
   }
 }
+function crearTarjeta(producto) {
+  const tarjeta = document.createElement('div');
+  tarjeta.classList.add('tarjeta');
 
+  const imagen = document.createElement('img');
+  imagen.classList.add('imagen');
+  imagen.src = producto.imagen;
+  imagen.alt = producto.nombre;
+  tarjeta.appendChild(imagen);
+
+  const nombreProducto = document.createElement('p');
+  nombreProducto.classList.add('nombre');
+  nombreProducto.textContent = producto.nombre;
+  tarjeta.appendChild(nombreProducto);
+
+  const precioProducto = document.createElement('p');
+  precioProducto.classList.add('precio');
+  precioProducto.textContent = `$${producto.precio.toFixed(2)}`;
+  tarjeta.appendChild(precioProducto);
+
+  return tarjeta;
+}
+
+const productos = fetch('productos.json')
+  .then(response => response.json())
+  .then(data => {
+    const productosContainer = document.getElementById('productosContainer');
+
+    productos.forEach(producto => {
+      const tarjeta = crearTarjeta(producto);
+      productosContainer.appendChild(tarjeta);
+    });
+  });
 function actualizarMonto() {
   const cuotas = document.getElementById('cuotas').value;
   cuotasSeleccionadas = parseInt(cuotas);
